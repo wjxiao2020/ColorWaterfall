@@ -8,6 +8,13 @@ body {
     margin-bottom: 10px;
 }
 
+#game_description {
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 #main_container {
     width: max-content;
     margin: auto;

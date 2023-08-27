@@ -8,6 +8,11 @@
 </head>
 <body>
 <h1 id="game_title">Color Waterfall</h1>
+<p id="game_description">
+    Click on a color block to create a waterfall of the color from the top left which flushes through the board.
+    <br>
+    Win by making the board a single color within the given steps!
+</p>
 <div id="main_container">
     <div id="selection_area">
         Board Size:
@@ -43,10 +48,10 @@
         step used: {{stepUsed}} / {{stepAllowed}}
     </div>
     <div class="outcome_message" v-show="finish && !fail">
-        YOU WON !!!
+        YAYYYY YOU WON !!!
     </div>
     <div class="outcome_message" v-show="fail">
-        You lose :(
+        AH OH You lose :(
     </div>
 </div>
 
