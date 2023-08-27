@@ -3,8 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Color Waterfall</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 </head>
 <body>
+<h1 id="game_title">Color Waterfall</h1>
+<div id="main_container">
+    <div id="selection_area">
+        Board Size:
+        <select v-model="boardSize" @change="reset">
+            <option value="4">4x4</option>
+            <option value="8">8x8</option>
+            <option value="16">16x16</option>
+            <option value="20">20x20</option>
+            <option value="25">25x25</option>
+            <option value="32">32x32</option>
+        </select>
+        &emsp;
+        Number of Colors:
+        <select v-model="colorNum" @change="reset">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+        <button id="restart_button" @click="reset">restart</button>
+    </div>
+    <div id="game_board">
+        <div class="game_board_rows" v-for="row in parseInt(boardSize)">
+            <div class="game_board_blocks" v-for="column in parseInt(boardSize)"
+                 :style="{backgroundColor: getColor(row, column)}"
+                 @click="blockClick(row, column)"
+                 :ref="`block${row}_${column}`"></div>
+        </div>
+    </div>
+    <div id="step_display_area">
+        step used: {{stepUsed}} / {{stepAllowed}}
+    </div>
+    <div class="outcome_message" v-show="finish && !fail">
+        YOU WON !!!
+    </div>
+    <div class="outcome_message" v-show="fail">
+        You lose :(
+    </div>
+</div>
 
+<footer>©2023 Weijia Xiao. All rights reserved.</footer>
+
+
+
+<script language="JavaScript" type="module" src="game.js"></script>
 </body>
 </html>

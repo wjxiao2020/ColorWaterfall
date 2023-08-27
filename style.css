@@ -1,0 +1,58 @@
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("sky_background.webp");
+    background-size: cover
+}
+
+#game_title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#main_container {
+    width: max-content;
+    margin: auto;
+    /*border: 1px black solid;*/
+}
+
+#selection_area {
+    font-size: 18px;
+    width: max-content;
+    margin: 10px auto 10px auto;
+}
+
+#restart_button {
+    margin-left: 25px;
+}
+
+#game_board {
+    width: max-content;
+    margin: 40px auto 40px auto;
+    border: 7px solid gray;
+}
+
+.game_board_rows {
+    display: flex;
+}
+.game_board_blocks{
+    height: 20px;
+    width: 20px;
+}
+
+#step_display_area, .outcome_message {
+    font-size: 30px;
+    text-align: center;
+}
+
+.outcome_message {
+    margin-top: 15px;
+}
+
+footer {
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+
+    margin-top: 50px;
+    text-align: center;
+}
+
